@@ -1,0 +1,193 @@
+﻿<Window x:Name="MainWindow1" x:Class="Assignment1.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"        
+        xmlns:local="clr-namespace:Assignment1"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="838.043" Width="1403.202" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" WindowStyle="None">
+
+    <Window.Resources>
+        <!--SolidColorBrush x:Key="brushWatermarkBackground" Color="White" />
+
+        <SolidColorBrush x:Key="brushWatermarkBorder" Color="Indigo" /-->
+
+        <BooleanToVisibilityConverter x:Key="BooleanToVisibility" />
+
+        <local:Helper x:Key="Helper" />
+        <Style TargetType="TextBox" x:Key="TextBoxStyle">
+            <!--Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type TextBox}">
+                        <Border x:Name="Bd" Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" CornerRadius="4,4,4,4"/>
+                    </ControlTemplate>
+                </Setter.Value>
+            </-->
+            <!--Setter Property="Foreground" Value="#FFC9C4C4"/-->
+
+        </Style>
+
+        <Style x:Key="placeHolder" TargetType="{x:Type TextBox}" BasedOn="{StaticResource {x:Type TextBox}}">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type TextBox}">
+                        <Grid>
+                            <TextBox Text="{Binding Path=Text,
+                                                RelativeSource={RelativeSource TemplatedParent}, 
+                                                Mode=TwoWay,
+                                                UpdateSourceTrigger=PropertyChanged}"
+                                 x:Name="textSource" 
+                                 Background="Transparent" 
+                                 Panel.ZIndex="2" />
+                            <TextBox Text="{TemplateBinding Tag}" Background="{TemplateBinding Background}" Panel.ZIndex="1">
+                                <TextBox.Style>
+                                    <Style TargetType="{x:Type TextBox}">
+                                        <Setter Property="Foreground" Value="Transparent"/>
+                                        <Style.Triggers>
+                                            <DataTrigger Binding="{Binding Path=Text, Source={x:Reference textSource}}" Value="">
+                                                <Setter Property="Foreground" Value="Gray"/>
+                                                <Setter Property="HorizontalContentAlignment" Value="Left"/>
+                                                <Setter Property="VerticalContentAlignment" Value="Center"/>
+                                                <Setter Property="Background" Value="Transparent"/>
+                                                <Setter Property="BorderBrush" Value="#FFABADB3"/>
+                                                <Setter Property="BorderThickness" Value="1"/>
+                                                <Setter Property="FontWeight" Value="Normal"/>
+                                                <Setter Property="RenderTransformOrigin" Value="-3.526,3.159"/>
+                                                <Setter Property="VerticalAlignment" Value="Top"/>
+                                                <Setter Property="Height" Value="23"/>
+                                                <Setter Property="Grid.Column" Value="0"/>
+                                            </DataTrigger>
+                                        </Style.Triggers>
+                                    </Style>
+                                </TextBox.Style>
+                            </TextBox>
+                        </Grid>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+        <!--Style x:Key="PlaceHolderComboBox" TargetType="{x:Type ComboBox}" BasedOn="{StaticResource {x:Type ComboBox}}">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type ComboBox}">
+                        <Grid>
+                            <ComboBox Text="{Binding Path=Text,
+                                                RelativeSource={RelativeSource TemplatedParent}, 
+                                                Mode=TwoWay,
+                                                UpdateSourceTrigger=PropertyChanged}"
+                                 x:Name="textSource" 
+                                 Background="Transparent" 
+                                 Panel.ZIndex="2" />
+                            <ComboBox Text="{TemplateBinding Tag}" Background="{TemplateBinding Background}" Panel.ZIndex="1">
+                                <ComboBox.Style>
+                                    <Style TargetType="{x:Type ComboBox}">
+                                        <Setter Property="Foreground" Value="Transparent"/>
+                                        <Style.Triggers>
+                                            <DataTrigger Binding="{Binding Path=ComboBoxItem, Source={x:Reference textSource}}" Value="ComboBoxItem">
+                                                <Setter Property="Foreground" Value="Gray"/>
+                                                <Setter Property="HorizontalContentAlignment" Value="Left"/>
+                                                <Setter Property="VerticalContentAlignment" Value="Center"/>                                               
+                                                <Setter Property="Background" Value="Transparent"/>
+                                                <Setter Property="BorderBrush" Value="#FFABADB3"/>
+                                                <Setter Property="BorderThickness" Value="1"/>
+                                                <Setter Property="FontWeight" Value="Normal"/>
+                                                <Setter Property="RenderTransformOrigin" Value="-3.526,3.159"/>
+                                                <Setter Property="VerticalAlignment" Value="Top"/>
+                                                <Setter Property="Height" Value="23"/>
+                                                <Setter Property="Grid.Column" Value="0"/>
+                                            </DataTrigger>
+                                        </Style.Triggers>
+                                    </Style>
+                                </ComboBox.Style> />
+                            </ComboBox>
+                        </Grid>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </-->
+
+
+        <Style TargetType="ComboBox" x:Key="ComboBoxStyle">
+            <!--Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type ComboBox}">
+                        <Border x:Name="Bd" Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" CornerRadius="4,4,4,4"/>
+                    </ControlTemplate>
+                </Setter.Value-->
+           
+            <Setter Property="Foreground" Value="Black"/>
+            <Setter Property="Width" Value="282"/>
+            <Setter Property="Background" Value="Transparent"/>
+            <Setter Property="BorderBrush" Value="#FFABADB3"/>
+            <Setter Property="BorderThickness" Value="1"/>
+            <Setter Property="FontWeight" Value="Normal"/>
+            <Setter Property="RenderTransformOrigin" Value="-3.526,3.159"/>
+            <Setter Property="VerticalAlignment" Value="Top"/>
+            <Setter Property="Height" Value="23"/>
+            <Setter Property="Grid.Column" Value="0"/>
+        </Style>
+        <Style TargetType="Button" x:Key="ButtonStyle">
+            <!--Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Border x:Name="Bd" Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}"  CornerRadius="4,4,4,4"/>
+                    </ControlTemplate>
+                </Setter.Value>
+            </-->
+            <Setter Property="Width" Value="Auto"/>
+            <Setter Property="FontSize" Value="22"/>
+            <Setter Property="FontFamily" Value="Cailibri Light"/>
+            <Setter Property="VerticalAlignment" Value="Top"/>
+            <Setter Property="Height" Value="40"/>
+            <Setter Property="Background" Value="Transparent"/>
+            <Setter Property="BorderBrush" Value="#FFABADB3"/>
+            <Setter Property="BorderThickness" Value="1"/>
+            <Setter Property="Grid.Column" Value="0"/>
+        </Style>
+    </Window.Resources>
+
+    <Grid x:Name="rootlayout" Margin="0,165,10,0" HorizontalAlignment="Right" Width="1359" RenderTransformOrigin="0.382,0.551">
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="865*"/>
+            <ColumnDefinition Width="494*"/>
+        </Grid.ColumnDefinitions>
+        <Label x:Name="ContactUsLabel" Content="Contact Us" HorizontalAlignment="Left" Margin="494,-114,0,0" VerticalAlignment="Top" Width="387" Height="88" FontSize="65" Foreground="#FF404ED3" FontWeight="SemiBold" FontFamily="Calibri" Grid.ColumnSpan="2"/>
+        <TextBox x:Name="FirstName" AcceptsReturn="True" VerticalScrollBarVisibility="Auto" HorizontalAlignment="Left" Margin="43,54,0,596" TextWrapping="Wrap" Style="{StaticResource placeHolder}" Tag="First Name*" Width="282"/>
+        <TextBox x:Name="LastName" AcceptsReturn="True" VerticalScrollBarVisibility="Auto" HorizontalAlignment="Right" Margin="0,54,189,596" TextWrapping="Wrap" Tag="Last Name*" Style="{StaticResource placeHolder}"  Width="282"/>
+        <TextBox x:Name="CompanyName" AcceptsReturn="True" VerticalScrollBarVisibility="Auto" HorizontalAlignment="Right" Margin="0,118,541,533" TextWrapping="Wrap" Tag="Company Name*" Style="{StaticResource placeHolder}"  Width="282" />
+        <TextBox x:Name="BussinessEmail" Tag="Bussiness Email*" AcceptsReturn="True" VerticalScrollBarVisibility="Auto" HorizontalAlignment="Right" Margin="0,118,189,533" TextWrapping="Wrap"  Style="{StaticResource placeHolder}" Width="282"/>
+        <TextBox x:Name="JobTitle" Tag="JobTitle*" AcceptsReturn="True" VerticalScrollBarVisibility="Auto" HorizontalAlignment="Right" Margin="0,178,541,473" TextWrapping="Wrap"  Style="{StaticResource placeHolder}" Width="282"/>
+        <TextBox x:Name="WebsiteAddress" Tag="WebsiteAddress*" AcceptsReturn="True" VerticalScrollBarVisibility="Auto" HorizontalAlignment="Right"  Margin="0,178,189,473" TextWrapping="Wrap"  Style="{StaticResource placeHolder}" Width="282" />
+        <TextBox x:Name="MobileNumber" Tag="Phone*" AcceptsReturn="True" VerticalScrollBarVisibility="Auto" Margin="45,235,541,415" TextWrapping="Wrap" Style="{StaticResource placeHolder}" Width="Auto"/>
+        <ComboBox x:Name="Country"  HorizontalAlignment="Right" Margin="0,235,189,0" VerticalAlignment="Top"   Width="282" SelectionChanged="Country_SelectionChanged">
+            <ComboBoxItem IsEnabled="False" IsSelected="True" Foreground="Gray">Select Country*</ComboBoxItem>
+            <ComboBoxItem Content = "India" />
+            <ComboBoxItem Content="US"/>
+        </ComboBox>
+        <ComboBox x:Name="State" Margin="45,298,543,0" VerticalAlignment="Top"  Width="Auto" >
+            <ComboBoxItem IsEnabled="False" IsSelected="True" Foreground="Gray" >Select State*</ComboBoxItem>
+        </ComboBox>
+        <TextBox x:Name="City" Tag="City" AcceptsReturn="True" VerticalScrollBarVisibility="Auto" HorizontalAlignment="Right" Margin="0,298,189,0" VerticalAlignment="Top"  Style="{StaticResource placeHolder}" Width="282"/>
+        <ComboBox x:Name="NumberOfEmployee" HorizontalAlignment="left"  Margin="43,363,0,283"  Width="282">
+            <ComboBoxItem IsEnabled="False" IsSelected="True" Foreground="Gray">Number Of Employees*</ComboBoxItem>
+            <ComboBoxItem Foreground="Black">1</ComboBoxItem>
+            <ComboBoxItem Foreground="Black">2</ComboBoxItem>
+            <ComboBoxItem Foreground="Black">3</ComboBoxItem>
+            <ComboBoxItem Foreground="Black">4</ComboBoxItem>
+            <ComboBoxItem Foreground="Black">5</ComboBoxItem>
+            <ComboBoxItem Foreground="Black">6</ComboBoxItem>
+        </ComboBox>
+        <ComboBox x:Name="IAmInterestedIn" HorizontalAlignment="Right"  Margin="0,363,189,283"  Width="282">
+            <ComboBoxItem IsEnabled="False" IsSelected="True" Foreground="Gray">I am Interested in*</ComboBoxItem>
+            <ComboBoxItem>Developer</ComboBoxItem>
+            <ComboBoxItem>Tester</ComboBoxItem>
+            <ComboBoxItem>Designer</ComboBoxItem>
+        </ComboBox>
+        <TextBox x:Name="CommentsQuestion"  Tag="Comments/Question *" TextWrapping="Wrap" AcceptsReturn="True" VerticalScrollBarVisibility="Auto" VerticalAlignment="Top"  Width="Auto" Style="{StaticResource placeHolder}" RenderTransformOrigin="0.073,1.192" Margin="42,435,189,0" Height="122" />
+        <Button Content="Submit" Name="SubmitBtn" Margin="43,575,686,0"  Style="{StaticResource ButtonStyle}" Background="#FF90AE2C"  Foreground="#FFF9F4F4" Click="SubmitBtn_Click"/>
+        <Button Content="Reset" Name="ResetBtn" Margin="211,575,525,0" Foreground="#FFFDFBFB" Style="{StaticResource ButtonStyle}" Background="#FFC7BEBE"/>
+        <local:Control Grid.Column="1" Background="Transparent" BorderBrush="#FFABADB3" BorderThickness="0" RenderTransformOrigin="0.075,0.018" Margin="0,54,29,198"/>
+    </Grid>
+</Window>
