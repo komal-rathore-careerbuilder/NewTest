@@ -1,7 +1,7 @@
 	
 #Below commands are necessary for patch logic
-New_tag="tag3"                                                                                               # initialize variable for new tag
-Previous_tag="tag1"                                                                                        # initialize variable for old tag
+New_tag="Pre-Prod_V_1.2.28_17_2"                                                                                               # initialize variable for new tag
+Previous_tag="Pre-Prod_V_1.2.28_17_1"                                                                                        # initialize variable for old tag
 mkdir -p "D:\Harbinger\Patches\2019\Patch "$(date +"%F")""
 a="D:/WT/"
 destination1="D:/Harbinger/Patches/2019/Patch $(date +"%F")"
