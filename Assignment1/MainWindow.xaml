@@ -188,6 +188,6 @@
         <TextBox x:Name="CommentsQuestion"  Tag="Comments/Question *" TextWrapping="Wrap" AcceptsReturn="True" VerticalScrollBarVisibility="Auto" VerticalAlignment="Top"  Width="Auto" Style="{StaticResource placeHolder}" RenderTransformOrigin="0.073,1.192" Margin="42,435,189,0" Height="122" />
         <Button Content="Submit" Name="SubmitBtn" Margin="43,575,686,0"  Style="{StaticResource ButtonStyle}" Background="#FF90AE2C"  Foreground="#FFF9F4F4" Click="SubmitBtn_Click"/>
         <Button Content="Reset" Name="ResetBtn" Margin="211,575,525,0" Foreground="#FFFDFBFB" Style="{StaticResource ButtonStyle}" Background="#FFC7BEBE"/>
-        <local:Control Grid.Column="1" Background="Transparent" BorderBrush="#FFABADB3" BorderThickness="0" RenderTransformOrigin="0.075,0.018" Margin="0,54,10,178"/>
+        <local:Control Grid.Column="1" Background="Transparent" BorderBrush="#FFABADB3" BorderThickness="0" RenderTransformOrigin="0.075,0.018" Margin="0,54,29,198"/>
     </Grid>
 </Window>
