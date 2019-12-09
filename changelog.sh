@@ -1,34 +1,18 @@
-npx git-changelog-command-line -std -tr v0.1.0 -tec "
-# Changelog
+echo "CHANGELOG"
+echo ----------------------
+git tag -l | sort -u -r | while read TAG ; do
+    echo
+    if [ $NEXT ];then
+        echo [$NEXT]
+    else
+        echo "[Current]"
+    fi
+    GIT_PAGER=cat git log --no-merges --format=" * %s" $TAG..$NEXT
+    NEXT=$TAG
+done
+FIRST=$(git tag -l | head -3)
+echo
+echo [$FIRST]
+GIT_PAGER=cat git log --no-merges --format=" * %s" $FIRST
 
-Changelog for {{ownerName}} {{repoName}}.
-
-{{#tags}}
-## {{name}}
- {{#issues}}
-  {{#hasIssue}}
-   {{#hasLink}}
-### {{name}} [{{issue}}]({{link}}) {{title}} {{#hasIssueType}} *{{issueType}}* {{/hasIssueType}} {{#hasLabels}} {{#labels}} *{{.}}* {{/labels}} {{/hasLabels}}
-   {{/hasLink}}
-   {{^hasLink}}
-### {{name}} {{issue}} {{title}} {{#hasIssueType}} *{{issueType}}* {{/hasIssueType}} {{#hasLabels}} {{#labels}} *{{.}}* {{/labels}} {{/hasLabels}}
-   {{/hasLink}}
-  {{/hasIssue}}
-  {{^hasIssue}}
-### {{name}}
-  {{/hasIssue}}
-
-  {{#commits}}
-**{{{messageTitle}}}**
-
-{{#messageBodyItems}}
- * {{.}} 
-{{/messageBodyItems}}
-
-[{{hash}}](https://github.com/{{ownerName}}/{{repoName}}/commit/{{hash}}) {{authorName}} *{{commitTime}}*
-
-  {{/commits}}
-
- {{/issues}}
-{{/tags}}
-"
+git log v2.1.0...v2.1.1 --pretty=format:'<li> <a href="https://github.com/komal-rathore-careerbuilder/NewTest.git/a02ccd7de9d19e2551a2192df5937efd363e47ef/%H">view a02ccd7de9d19e2551a2192df5937efd363e47ef &bull;</a> %s</li> ' --reverse | grep "#changelog"
