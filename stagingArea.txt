@@ -1,0 +1,43 @@
+The Staging Area (Index):
+
+The Staging Area is when git starts tracking and saving changes that occur in files. These saved changes reflect in the .git directory. That is about it when it comes to the Staging Area. You tell git that I want to 
+track these specific files, then git says okay and moves them from you Working Tree to the Staging Area and says “Cool, I know about this file in its entirety.” However, if you make any more additional changes 
+after adding a file to the Staging Area, git will not know about those specific changes until you tell it to see them. You explicitly have to tell git to notice the edits in your files.
+How can you see what is in your Staging Area? Run the command git status like before. It will look something like the image below.
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+What is a Git branch?
+
+Git branches are effectively a pointer to a snapshot of your changes.
+
+Why branching is required?
+
+When you want to add a new feature or fix a bug, it is not recommended to do do changes directly to master branch(Main branch) to avoid the chances for unstable code to get merged into the main code base. So, you can create a new branch to encapsulate your changes.
+It becomes convenient to work with multiple members in a team when each member is working on their own branch and when the code is tested to be working fine; branches can be merged to the main branch.
+Steps and commands for branching:
+
+1. Create branch - git branch “branchName”
+2. Check out branch - git checkout “branchName”
+3. Do changes/Add features in the source code on the checked out branch
+4. Commit changes to local repository - Git add <directory> , Git commit –m “commit msg”
+5. Push changes to remote repository(GitHub) - Git push –u origin “branchName”
+6. Once the code of the new branch is tested to be working successful, you need to merge your new branch to the master branch(main branch)
+
+Steps and commands for Merging to master branch:
+
+1.Checkout master branch - git checkout master
+2.Merge new branch to master - git merge “branchName”
+3.Push changes to remote rep - git push –u origin master
+4.After merging the new branch to the master branch, new branch is no longer required. So you can delete that branch.
+
+Steps and commands to delete the new branch:
+
+1.Delete from local repository- git branch –d “branchName”
+2.Delete from remote repository- git push origin –delete “branchName”
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+git pull and git rebase are not interchangeable, but they are closely connected.
+
+git pull fetches the latest changes of the current branch from a remote and applies those changes to your local copy of the branch. Generally this is done by merging, i.e. the local changes are merged into the remote changes. So git pull is similar to git fetch & git merge.
+
+Rebasing is an alternative to merging. Instead of creating a new commit that combines the two branches, it moves the commits of one of the branches on top of the other.
+
+You can pull using rebase instead of merge (git pull --rebase). The local changes you made will be rebased on top of the remote changes, instead of being merged with the remote changes.
