@@ -1,0 +1,99 @@
+Tagging in git or any VCS refers to creating specific points in history for your repository/data 
+$ git tag  --list                     # see tag lists                                                                                                           
+$ git push origin <tag-name>      # push a single tag
+$ git push --tags                 # push all local tags 
+
+*push tags to remote
+git push origin tagname
+git push origin --tags
+git push --tags
+
+* Delete tags (to delete from local)
+git tag -d tagname
+git tag --delete tagname
+
+*Delete tags (to delete tags from remote)
+git push origin -d tagname
+git push origin --delete tagname
+gti push origin :tagname
+
+*Delete  multiple tag
+git tag -d tagname tagname(local)
+git  push origin -d tagname tagname(remote)
+
+* Creating a tag
+ git tag  <tagname>
+
+*you want to include a description (message) with your add -a to create an annotated tag
+git tag <tagname>  -a
+
+*This will create a local tag with the current state of the branch you are on.
+ When pushing to your remote repo, tags are NOT included by default. You will need
+ to explicitly say that you want to push your tags to your remote repo:
+git push origin --tags
+
+*if you want to see the list of tag that starting just like v1 then
+git tag -l "v1.*"
+
+*this will show the detail of particular tag
+git show tagname(git show v1.0)
+
+*if you just want to push a single tag:
+git push origin <tag>
+
+* if you want to undo the changes in the file before add command(not in stage area)
+git checkout -- filename
+
+* if you want to revert the changes after commit 
+git revert id
+
+*if you want to back the changes after revert back then
+git reset id
+
+*if you have a more than one task then you want to save your work 
+git stash save  "message" (after that changes are gone)
+git stash list (to see the list what you have changes in the file with id)
+git stash apply {unique id} (changes are show on use of this command)
+git stash drop {unique id} (to delete the changes)
+git stash clean (if you have multiple file to delete)
+git stash pop (So pop is just like stack's pop - it actually removes the element once it's popped, while apply is more like peek.)
+git stash show -p (if you try to review the stash content you'll get)
+
+Note :every commit has occured a 40 digit number that is checksum
+
+* if commit is on wrong branch then use cherry pick
+1.firstly in the present branch use git log
+2.then copy the commit id 
+3.checkout the branch(switch to that particular branch)
+4.in the desired branch use (git cherry-pick commit-id)
+
+*to see the hidden folder
+ls -lart
+
+*Discard changes in the working directory which include many files
+git checkout -f
+
+*get filter from log command
+git log -i --grep="Your text"
+
+*git gc performs garbage collection on your repository. Suppose you create a branch, change a bunch of files, commit your changes, 
+do that again, and then delete the branch without merging it. All of those changed files and commits are sitting around taking up space, 
+but you’re probably never going to use them again.
+
+git gc deletes objects that are no longer part of any branch. (There are subtleties involving the reflog, which keeps track of those objects 
+just in case you need them, so you have to tell gc 
+how old the garbage has to be before you collect it.)
+git gc
+
+Git: what is a dangling commit/blob and where do they come from?
+Dangling blob = A change that made it to the staging area/index but never got committed. One thing that is amazing with git is that once 
+it gets added to the staging area, you can always get it back because these blobs behave like commits in that they have a hash too!!
+
+Dangling commit = A commit that isn't directly linked to by any child commit, branch, tag or other reference. You can get these back too!
+
+HOW TO remove all dangling commits from your git repository 
+git reflog expire --expire=now --all
+git gc --prune=now
+
+
+
