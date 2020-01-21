@@ -1,0 +1,26 @@
+JIRA URL -       https://jira.workterra.net/
+User ID -          Komal.Rathore
+Password -      Apple$1234
+
+    Name:          Komal Rathore
+    Okta username: krathore@cb.careerbuilder.com
+    AD username:   krathore@cb.careerbuilder.com
+    Password:      k57z6nBHV2
+    OKta :k307BHA851
+
+System @nmol67890#
+
+CBDR @nmolsingh67890#
+
+jenkins cred 
+User :KomalRathore333
+pass :@nmol67890#
+
+ignored text
+(15:38) raj.hawaldar: https://docs.microsoft.com/en-us/learn/certifications/azure-devops#certification-prerequisites
+
+RDO Credential    workterra\WT_Rackspace23   06l0748B4i4nS2q
+
+
+
+
