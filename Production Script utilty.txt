@@ -1,6 +1,0 @@
-DECLARE @DBServer VARCHAR(MAX)='WT-PROD-LST3'
-DECLARE @listStr VARCHAR(MAX)
-SELECT @listStr = COALESCE(@listStr+',' ,'') + Convert(Varchar(Max),DBName)
-FROM Company where IsActive=1 and DBServer=@DBServer
-SELECT @listStr
-GO
