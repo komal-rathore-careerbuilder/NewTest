@@ -34,4 +34,10 @@ D:\NewProjects\NewTest\Assignment1\obj\Debug\Assignment1.Properties.Resources.re
 D:\NewProjects\NewTest\Assignment1\obj\Debug\Assignment1.csproj.GenerateResource.cache
 D:\NewProjects\NewTest\Assignment1\obj\Debug\Assignment1.exe
 D:\NewProjects\NewTest\Assignment1\obj\Debug\Assignment1.pdb
+D:\NewProjects\NewTest\Assignment1\obj\Debug\Assignment1.csprojAssemblyReference.cache
+D:\NewProjects\NewTest\Assignment1\obj\Debug\Assignment1.csproj.CoreCompileInputs.cache
+D:\NewProjects\NewTest\Assignment1\bin\Debug\Assignment1.exe.manifest
+D:\NewProjects\NewTest\Assignment1\bin\Debug\Assignment1.application
+D:\NewProjects\NewTest\Assignment1\obj\Debug\Assignment1.exe.manifest
+D:\NewProjects\NewTest\Assignment1\obj\Debug\Assignment1.application
 D:\NewProjects\NewTest\Assignment1\obj\Debug\Assignment1.csprojResolveAssemblyReference.cache
